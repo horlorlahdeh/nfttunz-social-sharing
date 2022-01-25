@@ -1,9 +1,9 @@
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
-import MetaDecorator from '../components/MetaDecorator';
-import styles from '../styles/Home.module.css';
-import { fetcher } from '../utils/fetchExternal';
-import Loader from '../components/Loader';
+import MetaDecorator from '../../components/MetaDecorator';
+import styles from '../../styles/Home.module.css';
+import { fetcher } from '../../utils/fetchExternal';
+import Loader from '../../components/Loader';
 
 export default function MarketCollectible({ data }) {
   const router = useRouter();
