@@ -9,7 +9,7 @@ export default function MarketCollectible({ data }) {
   const router = useRouter();
   const { series } = router.query;
  useEffect(() => {
-   window.location.assign(`https://www.nfttunz.io/market/@${series}`);
+   window.location.assign(`https://www.nfttunz.io/market/${series}`);
  }, [series]);
   return (
     <div className={styles.container}>
