@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import {useRouter} from 'next/router'
+import { useRouter } from 'next/router';
 import MetaDecorator from '../components/MetaDecorator';
 import styles from '../styles/Home.module.css';
 import { fetcher } from '../utils/fetchExternal';
@@ -7,10 +7,10 @@ import Loader from '../components/Loader';
 
 export default function Home({ data }) {
   const router = useRouter();
-  // const {  series } = router.query.params;
-  useEffect(() => {
-    console.log(router);
-  }, [])
+//   const { series } = router.query;
+//   useEffect(() => {
+//     console.log(series);
+//   }, [series]);
   return (
     <div className={styles.container}>
       <MetaDecorator
