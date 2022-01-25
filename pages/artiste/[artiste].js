@@ -15,9 +15,9 @@ export default function Artiste({ data }) {
     <div className={styles.container}>
       <MetaDecorator
         description={data?.bio}
-        title={data?.name}
+        title={data?.username}
         imageUrl={data?.avatar}
-        imageAlt={data?.avatar}
+        imageAlt={data?.username}
       />
       <Loader />
     </div>
