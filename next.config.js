@@ -1,6 +1,13 @@
 module.exports = {
   serverRuntimeConfig: { secret: process.env.SECRET },
   publicRuntimeConfig: { api: process.env.API },
+  images: {
+    domains: [
+      'https://cdn.pixabay.com',
+      'https://nfttunz-cdn.fra1.digitaloceanspaces.com',
+      'https://app.nfttunz.io',
+    ],
+  },
   // async redirects() {
   //   return [
   //     {

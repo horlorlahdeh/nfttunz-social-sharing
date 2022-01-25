@@ -7,7 +7,13 @@ const MetaDecorator = ({ title, description, imageUrl, imageAlt }) => (
     <meta property='og:title' content={title} />
     <meta name='description' content={description} />
     <meta property='og:description' content={description} />
-    <meta property='og:image' content={imageUrl} />
+    <meta
+      property='og:image'
+      content={
+        imageUrl ||
+        'https://cdn.pixabay.com/photo/2016/05/24/22/54/icon-1413583_960_720.png'
+      }
+    />
     {/* <meta
       property='og:url'
       content={

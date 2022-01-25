@@ -25,7 +25,7 @@ export default function Home({ data }) {
 }
 
 export async function getServerSideProps(context) {
-  const justSEO = false;
+  const justSEO = true;
   // Fetch data from external API
   const res = await fetcher.get(
     `/collectibles/info?series=${context.params.series}`,
@@ -34,7 +34,7 @@ export async function getServerSideProps(context) {
   if (justSEO) {
     return {
       redirect: {
-        destination: 'https://app.nfttunz.io/',
+        destination: `https://app.nfttunz.io/${context.params.series}`,
         permanent: false,
         basePath: false,
       },

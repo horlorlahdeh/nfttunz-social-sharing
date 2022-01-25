@@ -1,23 +1,23 @@
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
-import MetaDecorator from '../components/MetaDecorator';
-import styles from '../styles/Home.module.css';
-import { fetcher } from '../utils/fetchExternal';
-import Loader from '../components/Loader';
+import MetaDecorator from '../../components/MetaDecorator';
+import styles from '../../styles/Home.module.css';
+import { fetcher } from '../../utils/fetchExternal';
+import Loader from '../../components/Loader';
 
-export default function MarketCollectible({ data }) {
+export default function Artiste({ data }) {
   const router = useRouter();
-//   const { series } = router.query;
-//   useEffect(() => {
-//     console.log(series);
-//   }, [series]);
+  //   const { series } = router.query;
+  //   useEffect(() => {
+  //     console.log(series);
+  //   }, [series]);
   return (
     <div className={styles.container}>
       <MetaDecorator
-        description={data?.description}
+        description={data?.bio}
         title={data?.name}
-        imageUrl={data?.thumbnail}
-        imageAlt={data?.thumbnail}
+        imageUrl={data?.avatar}
+        imageAlt={data?.avatar}
       />
       <Loader />
     </div>
@@ -28,13 +28,13 @@ export async function getServerSideProps(context) {
   const justSEO = true;
   // Fetch data from external API
   const res = await fetcher.get(
-    `/collectibles/info?series=${context.params.series}`,
+    `/users/profile/artiste?username=${context.params.artiste}`,
   );
   const data = res.data;
   if (justSEO) {
     return {
       redirect: {
-        destination: `https://app.nfttunz.io/market/${context.params.series}`,
+        destination: `https://app.nfttunz.io/@${context.params.artiste}`,
         permanent: false,
         basePath: false,
       },
