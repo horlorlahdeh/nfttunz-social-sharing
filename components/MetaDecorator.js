@@ -11,7 +11,7 @@ const MetaDecorator = ({ title, description, imageUrl, imageAlt }) => (
       property='og:image'
       content={
         imageUrl ||
-        'https://cdn.pixabay.com/photo/2016/05/24/22/54/icon-1413583_960_720.png'
+        'https://app.nfttunz.io/static/media/logo_color.1da7f11b.png'
       }
     />
     {/* <meta

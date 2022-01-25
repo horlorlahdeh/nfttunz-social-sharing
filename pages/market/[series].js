@@ -7,10 +7,10 @@ import Loader from '../../components/Loader';
 
 export default function MarketCollectible({ data }) {
   const router = useRouter();
-//   const { series } = router.query;
-//   useEffect(() => {
-//     console.log(series);
-//   }, [series]);
+  const { series } = router.query;
+ useEffect(() => {
+   window.location.assign(`https://www.nfttunz.io/market/@${series}`);
+ }, [series]);
   return (
     <div className={styles.container}>
       <MetaDecorator
@@ -25,7 +25,7 @@ export default function MarketCollectible({ data }) {
 }
 
 export async function getServerSideProps(context) {
-  const justSEO = true;
+  const justSEO = false;
   // Fetch data from external API
   const res = await fetcher.get(
     `/collectibles/info?series=${context.params.series}`,

@@ -1,16 +1,16 @@
-import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import MetaDecorator from '../../components/MetaDecorator';
 import styles from '../../styles/Home.module.css';
 import { fetcher } from '../../utils/fetchExternal';
 import Loader from '../../components/Loader';
+import { useEffect } from 'react';
 
 export default function Artiste({ data }) {
   const router = useRouter();
-  //   const { series } = router.query;
-  //   useEffect(() => {
-  //     console.log(series);
-  //   }, [series]);
+    const { artiste } = router.query;
+    useEffect(() => {
+       window.location.assign(`https://www.nfttunz.io/@${artiste}`);
+    }, [artiste]);
   return (
     <div className={styles.container}>
       <MetaDecorator
@@ -25,7 +25,7 @@ export default function Artiste({ data }) {
 }
 
 export async function getServerSideProps(context) {
-  const justSEO = true;
+  const justSEO = false;
   // Fetch data from external API
   const res = await fetcher.get(
     `/users/profile/artiste?username=${context.params.artiste}`,
